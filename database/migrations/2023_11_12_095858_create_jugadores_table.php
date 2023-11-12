@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('edad');
             $table->enum('posicion', ['portero', 'defensa','central','delantero','alero','base','pivot'])->nullable();
+            $table->timestamps();
             //falta añadir relacion con equipo
         });
     }

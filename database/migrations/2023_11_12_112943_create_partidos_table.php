@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('contrincante');
             $table->enum('campo', ['casa','contrincante','pendiente'])->default('pendiente');
             $table->enum('resultado',['victoria','derrota','empate','pendiente'])->default('pendiente');
+            $table->timestamps();
         });
     }
 
