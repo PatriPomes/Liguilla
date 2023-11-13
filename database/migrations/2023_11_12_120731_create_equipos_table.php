@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
-            $table->enum('deporte', ['futbol','basquet']);
+            $table->string('campo');
+            
+            
             $table->timestamps();
         });
     }

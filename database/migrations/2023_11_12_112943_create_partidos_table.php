@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('partidos', function (Blueprint $table) {
             $table->id();
+
             $table->date('fecha_partido')->nullable();
             $table->time('hora_partido')->nullable();
             $table->string('contrincante');
-            $table->enum('campo', ['casa','contrincante','pendiente'])->default('pendiente');
-            $table->enum('resultado',['victoria','derrota','empate','pendiente'])->default('pendiente');
-            $table->timestamps();
+            $table->enum('campo', ['local','visitante','pendiente'])->default('pendiente');
+            $table->enum('resultado',[3,2,1,0])->default(0);
+            $table->integer('goles_marcados');
+            $table->integer('goles_recibidos');
+            
+             $table->timestamps();
         });
     }
 
