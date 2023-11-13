@@ -9,4 +9,7 @@ class Equipo extends Model
 {
     use HasFactory;
 
+    public function partido(){
+        return $this->belongsTo('App\Models\Partido');
+    }
 }

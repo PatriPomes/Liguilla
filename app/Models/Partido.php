@@ -9,5 +9,8 @@ class Partido extends Model
 {
     use HasFactory;
 
-  
+  public function equipo(){
+
+    return $this->hasOne('App\Models\Partido');
+  }
 }
