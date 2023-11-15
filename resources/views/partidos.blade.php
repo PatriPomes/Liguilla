@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
@@ -15,6 +17,8 @@
                 {{$partido->equipo_local->name}} {{$partido->goles_local}} {{$partido->goles_visitante}} {{$partido->equipo_visitante->name}}</li>
             @endforeach
         </ul>
+            {{$partidos->links()}}
+        
     <h3>De la misma manera podras acceder a todas las funciones para la gestion de los mismaos</h3>
         <ul>
             <li>Añadir nuevos partidos</li>

@@ -8,7 +8,7 @@ class PartidosController extends Controller
 {
     public function index(){
         //metodo encargado de mostrar la vista principal
-        $partidos= Partido::all();
+        $partidos= Partido::paginate(4);
         return view('partidos', compact('partidos'));
     }
     public function create(){
