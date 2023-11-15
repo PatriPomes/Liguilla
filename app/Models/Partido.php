@@ -9,8 +9,13 @@ class Partido extends Model
 {
     use HasFactory;
 
-  public function equipo(){
-
-    return $this->hasOne('App\Models\Partido');
-  }
+    public function equipo_local()
+    {
+        return $this->belongsTo(Equipo::class);
+    }
+ 
+    public function equipo_visitante()
+    {
+        return $this->belongsTo(Equipo::class);
+    }
 }

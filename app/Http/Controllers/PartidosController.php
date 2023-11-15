@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Partido;
 class PartidosController extends Controller
 {
     public function index(){
         //metodo encargado de mostrar la vista principal
-        return view('partidos');
+        $partidos= Partido::paginate(4);
+        return view('partidos', compact('partidos'));
     }
     public function create(){
         //metodo encargado de crear

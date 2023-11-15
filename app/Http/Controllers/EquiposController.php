@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Equipo;
 
 class EquiposController extends Controller
 {
     //no hacemos invoke porque queremos administrar desde aqui el crud referente a los equipos.
     public function index(){
         //metodo encargado de mostrar la vista principal
-        return view('equipos');
+        $equipos= Equipo::all();
+        return view('equipos', compact('equipos'));
     }
     public function create(){
         //metodo encargado de crear
