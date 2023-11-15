@@ -9,18 +9,18 @@ class EquiposController extends Controller
     //no hacemos invoke porque queremos administrar desde aqui el crud referente a los equipos.
     public function index(){
         //metodo encargado de mostrar la vista principal
-        return "Pagina principal de los equipos participantes, aqui podras ver el listado de todos nuestros equipos";
+        return view('equipos');
     }
     public function create(){
         //metodo encargado de crear
-        return 'Espacio destinado a añadir nuevos equipos';
+        return view('equipos');
     }
     public function edit($equipo){
         //metodo encargado de editar
-        return 'Espacio destinado a editar';
+        return view('equipos');
     }
     public function delete($equipo){
         //metodo encargado de eliminar
-        return 'Espacio destinado a eliminar equipos que ya no desean participar';
+        return view('equipos');
     }
 }
