@@ -19,7 +19,7 @@ class EquiposController extends Controller
         //metodo encargado de editar
         return 'Espacio destinado a editar';
     }
-    public function delete($equipo1){
+    public function delete($equipo){
         //metodo encargado de eliminar
         return 'Espacio destinado a eliminar equipos que ya no desean participar';
     }
