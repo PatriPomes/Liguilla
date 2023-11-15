@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EquiposController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", HomeController::class);//Acceso pagina principal, pendiente hacer el view posibles dos botenes para ir a equipos y a partidos...
+
+Route::get('equipos', [EquiposController::class, 'index']);
+
+Route::get('equipos/create', [EquiposController::class,'create']);
+
+Route::get('equipos/{equipo}', [EquiposController::class,'edit']);
+
+Route::get('equipos/{equipo1}', [EquiposController::class,'delete']);
+
