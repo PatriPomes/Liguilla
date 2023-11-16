@@ -18,19 +18,19 @@ use App\Http\Controllers\PartidosController;
 Route::get("/", HomeController::class);//Acceso pagina principal, pendiente hacer el view posibles dos botenes para ir a equipos y a partidos...
 
 //EQUIPOS//
-Route::get('equipos', [EquiposController::class, 'index']);
+Route::get('equipos', [EquiposController::class, 'index'])->name('equipos.index');
 
-Route::get('equipos/create', [EquiposController::class,'create']);
+Route::get('equipos/create', [EquiposController::class,'create'])->name('equipos.create');
 
-Route::get('equipos/{equipo}/edit', [EquiposController::class,'edit']);
+Route::get('equipos/{equipo}/edit', [EquiposController::class,'edit'])->name('equipos.edit');
 
-Route::get('equipos/{equipo1}/delete', [EquiposController::class,'delete']);
+Route::get('equipos/{equipo1}/delete', [EquiposController::class,'delete'])->name('equipos.delete');
 
 //PARTIDOS//
-Route::get('partidos', [PartidosController::class, 'index']);
+Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
 
-Route::get('partidos/create', [PartidosController::class,'create']);
+Route::get('partidos/create', [PartidosController::class,'create'])->name('partidos.create');
 
-Route::get('partidos/{partido}/edit', [PartidosController::class,'edit']);
+Route::get('partidos/{partido}/edit', [PartidosController::class,'edit'])->name('partidos.edit');
 
-Route::get('partidos/{partido}/delete', [PartidosController::class,'delete']);
+Route::get('partidos/{partido}/delete', [PartidosController::class,'delete'])->name('partidos.delete');

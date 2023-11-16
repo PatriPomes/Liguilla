@@ -7,12 +7,20 @@
 </head>
 <body>
     <h2>Pagina principal de los equipos participantes, aqui podras ver el listado de todos nuestros equipos</h2>
-        <ul>
-            <h5>EQUIPO      CAMPO</h5>
-            @foreach ($equipos as $equipo)    
-            <li>{{$equipo->name}} {{$equipo->campo}}</li>
-            @endforeach
-        </ul>
+        <!--INICIO CREAR-->
+    <a href=''> Añadir Equipo </a>
+
+        <!--FIN CREAR-->
+        <!--INICIO MOSTRAR-->
+    
+    <ul>
+            
+        <h5>EQUIPO      CAMPO</h5>
+        @foreach ($equipos as $equipo)    
+        <li>{{$equipo->name}} {{$equipo->campo}}</li>
+        @endforeach
+    </ul>
+    <!--FIN MOSTRAR-->
     <h3>De la misma manera podras acceder a todas las funciones para la gestion de los mismos</h3>
         <ul>
             <li>Añadir nuevos equipos</li>
