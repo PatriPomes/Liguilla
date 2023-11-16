@@ -29,7 +29,7 @@ Route::get('equipos/{equipo1}/delete', [EquiposController::class,'delete'])->nam
 //PARTIDOS//
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
 
-Route::get('partidos/create', [PartidosController::class,'create'])->name('partidos.create');
+Route::post('partidos/create', [PartidosController::class,'create'])->name('partidos.create');
 
 Route::get('partidos/{partido}/edit', [PartidosController::class,'edit'])->name('partidos.edit');
 

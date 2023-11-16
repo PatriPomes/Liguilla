@@ -21,44 +21,49 @@
       <!--   INICIO CREAR-->
     <form action="{{route('partidos.create')}}" method="POST">
         @csrf
+        @php
+        $equipos = App\Models\Equipo::all();
+        @endphp
         <label> Fecha_partido:
             <input type='date' name='fecha_partido'>
          </label>
          <label> Hora_partido:
             <input type='time' name='hora_partido'>
           </label>
+
           <label> Campo:
             <select name='campo'>
               <option value='pendiente' selected>Pendiente</option>
               <option value='local'>Local</option>
               <option value='visitante'>Visitante</option>
             </select>
-           </label>
+          </label>
 
-           {{-- <label> Equipo local:
+          <label> Equipo local:
             <select name='equipo_local_id'>
               @foreach ($equipos as $equipo)
                 <option value='{{ $equipo->id }}'>{{ $equipo->name }}</option>
               @endforeach
             </select> 
-            </label> --}}
+          </label> 
 
-            <label>Goles Local:
-                <input type='number' name='goles_local'>
-               </label>
-           </label>
-           <label>Goles Visitante:
+          <label>Goles Local:
+            <input type='number' name='goles_local'>
+          </label>
+
+          <label>Goles Visitante:
             <input type='number' name='goles_visitante'>
-           </label>
-       </label>
-           {{-- <label> Equipo visitante:
+          </label>
+       
+           <label> Equipo visitante:
             <select name='equipo_visitante_id'>
               @foreach ($equipos as $equipo)
                 <option value='{{ $equipo->id }}'>{{ $equipo->name }}</option>
               @endforeach
             </select>
-           </label> --}}
+          </label>
         <br> 
+        <br>
         <button type="submit"> Añadir Partido </button>
     </form>
     <!--FIN CREAR-->

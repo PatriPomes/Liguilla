@@ -18,17 +18,16 @@ class PartidosController extends Controller
         $partido->fecha_partido = $request->fecha_partido;
         $partido->hora_partido = $request->hora_partido;
         $partido->campo = $request->campo;
-        $partido->equipo_local = $request->equipo_local;
+        $partido->equipo_local_id = $request->equipo_local_id;
         $partido->goles_local = $request->goles_local;
-        $partido->equipo_visitante = $request->equipo_visitante;
         $partido->goles_visitante = $request->goles_visitante;
-        $partido->save();
+        $partido->equipo_visitante_id = $request->equipo_visitante_id;
        
         
-
+        $partido->save();
+       
         return redirect()->route('partidos.index');
-        //return redirect()->route('partidos.index');
-       //return 'llegando señal';
+        
     }
     public function edit($partido){
         //metodo encargado de editar
