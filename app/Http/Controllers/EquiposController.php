@@ -13,9 +13,15 @@ class EquiposController extends Controller
         $equipos= Equipo::all();
         return view('equipos', compact('equipos'));
     }
-    public function create(){
+    public function create(Request $request){
         //metodo encargado de crear
-        return view('equipos');
+        $equipo = new Equipo;
+        $equipo->name = $request->name;
+        $equipo->campo = $request->campo;
+        $equipo->save();
+
+        return redirect()->route('equipos.index'); // esto es lo mismo que return $this->index();
+       
     }
     public function edit($equipo){
         //metodo encargado de editar

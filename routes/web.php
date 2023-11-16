@@ -20,7 +20,7 @@ Route::get("/", HomeController::class);//Acceso pagina principal, pendiente hace
 //EQUIPOS//
 Route::get('equipos', [EquiposController::class, 'index'])->name('equipos.index');
 
-Route::get('equipos/create', [EquiposController::class,'create'])->name('equipos.create');
+Route::post('equipos/create', [EquiposController::class,'create'])->name('equipos.create');
 
 Route::get('equipos/{equipo}/edit', [EquiposController::class,'edit'])->name('equipos.edit');
 
