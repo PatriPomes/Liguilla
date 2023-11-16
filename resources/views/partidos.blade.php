@@ -42,7 +42,7 @@
           <label> Equipo local:
             <select name='equipo_local_id'>
               @foreach ($equipos as $equipo)
-                <option value='{{ $equipo->id }}'>{{ $equipo->name }}</option>
+              <option value='{{ $equipo->id }}' {{ $equipo->id == $partido->equipo_visitante_id ? 'disabled' : '' }}>{{ $equipo->name }}</option>
               @endforeach
             </select> 
           </label> 
@@ -58,7 +58,7 @@
            <label> Equipo visitante:
             <select name='equipo_visitante_id'>
               @foreach ($equipos as $equipo)
-                <option value='{{ $equipo->id }}'>{{ $equipo->name }}</option>
+              <option value='{{ $equipo->id }}' {{ $equipo->id == $partido->equipo_local_id ? 'disabled' : '' }}>{{ $equipo->name }}</option>
               @endforeach
             </select>
           </label>
