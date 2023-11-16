@@ -7,12 +7,33 @@
 </head>
 <body>
     <h2>Pagina principal de los equipos participantes, aqui podras ver el listado de todos nuestros equipos</h2>
-        <ul>
-            <h5>EQUIPO      CAMPO</h5>
-            @foreach ($equipos as $equipo)    
-            <li>{{$equipo->name}} {{$equipo->campo}}</li>
-            @endforeach
-        </ul>
+    <!--INICIO CREAR-->
+       
+        <form action="{{ route('equipos.create') }}" method="POST">
+            @csrf
+            <label>
+                Equipo:
+                <input type='text' name='name'>
+            </label>
+            <label>
+                Campo:
+                <input type='text' name='campo'>
+            </label>
+            <br>
+            <button type="submit"> Añadir Equipo </button>
+        </form>
+        <!--FIN CREAR-->
+        <!--INICIO MOSTRAR-->
+    
+    <ul>
+            
+        <h5>EQUIPO      CAMPO</h5>
+        @foreach ($equipos as $equipo)    
+        <li>{{$equipo->name}} {{$equipo->campo}}</li>
+        @endforeach
+    </ul>
+        
+    <!--FIN -->
     <h3>De la misma manera podras acceder a todas las funciones para la gestion de los mismos</h3>
         <ul>
             <li>Añadir nuevos equipos</li>
