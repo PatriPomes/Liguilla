@@ -26,7 +26,6 @@ class EquiposController extends Controller
     }
     public function edit(Equipo $equipo){
 
-        //return 'hola que tal';
         return view('equipos.edit', compact('equipo'));
         
     }
@@ -39,7 +38,7 @@ class EquiposController extends Controller
     }
     public function delete($equipo){
         //metodo encargado de eliminar
-        
+
         return view('equipos');
     }
 

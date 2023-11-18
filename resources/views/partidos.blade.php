@@ -14,7 +14,10 @@
             <h5>FECHA DEL PARTIDO HORA DEL PARTIDO CAMPO GOLES LOCAL GOLES VISITANTE EQUIPO LOCAL EQUIPO VISITANTE</h5>
             @foreach ($partidos as $partido)    
             <li>{{$partido->fecha_partido}} {{$partido->hora_partido}} {{$partido->campo}} 
-                {{$partido->equipo_local->name}} {{$partido->goles_local}} {{$partido->goles_visitante}} {{$partido->equipo_visitante->name}}</li>
+                {{$partido->equipo_local->name}} {{$partido->goles_local}} {{$partido->goles_visitante}} {{$partido->equipo_visitante->name}}
+                <a href="{{route('partidos.edit', ['partido' => $partido->id]) }}">Editar</a>
+            </li>
+
             @endforeach
         </ul>
             {{$partidos->links()}}

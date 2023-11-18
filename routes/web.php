@@ -33,6 +33,8 @@ Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.ind
 
 Route::post('partidos/create', [PartidosController::class,'create'])->name('partidos.create');
 
-Route::get('partidos/{id}/edit', [PartidosController::class,'edit'])->name('partidos.edit');
+Route::get('partidos/{partido}/edit', [PartidosController::class,'edit'])->name('partidos.edit');
+
+Route::put('partidos/{partido}', [PartidosController::class,'update'])->name('partidos.update');
 
 Route::get('partidos/{id}/delete', [PartidosController::class,'delete'])->name('partidos.delete');

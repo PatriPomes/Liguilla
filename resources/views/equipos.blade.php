@@ -28,9 +28,8 @@
         
         @foreach ($equipos as $equipo)    
         <li>{{$equipo->name}} {{$equipo->campo}} 
-    
             <a href="{{route('equipos.edit', ['equipo' => $equipo->id]) }}">Editar</a>
-    
+        </li>
         @endforeach
     </ul> 
     <!--FIN -->

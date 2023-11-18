@@ -7,8 +7,7 @@
 </head>
 <body>
     <h2>Que deseas modificar???</h2>
-    <!--INICIO CREAR-->
-       
+           
         <form action="{{route('equipos.update', $equipo)}}" method="post">
             @csrf
             @method('put')
