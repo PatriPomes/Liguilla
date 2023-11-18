@@ -62,7 +62,6 @@
               @endforeach
             </select>
           </label>
-        <br> 
         <br>
         <button type="submit"> Añadir Partido </button>
     </form>

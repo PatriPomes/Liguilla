@@ -19,21 +19,22 @@
                 Campo:
                 <input type='text' name='campo'>
             </label>
-            <br>
             <button type="submit"> Añadir Equipo </button>
         </form>
         <!--FIN CREAR-->
         <!--INICIO MOSTRAR-->
-    
-    <ul>
-            
+    <ul>   
         <h5>EQUIPO      CAMPO</h5>
-        @foreach ($equipos as $equipo)    
-        <li>{{$equipo->name}} {{$equipo->campo}}</li>
-        @endforeach
-    </ul>
         
+        @foreach ($equipos as $equipo)    
+        <li>{{$equipo->name}} {{$equipo->campo}} 
+    
+            <a href="{{route('equipos.edit', ['equipo' => $equipo->id]) }}">Editar</a>
+    
+        @endforeach
+    </ul> 
     <!--FIN -->
+
     <h3>De la misma manera podras acceder a todas las funciones para la gestion de los mismos</h3>
         <ul>
             <li>Añadir nuevos equipos</li>
