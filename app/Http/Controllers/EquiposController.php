@@ -24,12 +24,21 @@ class EquiposController extends Controller
         return redirect()->route('equipos.index'); // esto es lo mismo que return $this->index();
        
     }
-    public function edit($equipo){
-        //metodo encargado de editar
-        return view('equipos');
+    public function edit(Equipo $equipo){
+
+        return view('equipos.edit', compact('equipo'));
+        
+    }
+    public function update(Request $request, Equipo $equipo){
+        $equipo->name = $request->name;
+        $equipo->campo = $request->campo;
+        $equipo->save();
+
+        return redirect()->route('equipos.index');
     }
     public function delete($equipo){
         //metodo encargado de eliminar
+
         return view('equipos');
     }
 

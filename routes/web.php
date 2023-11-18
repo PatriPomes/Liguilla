@@ -24,7 +24,9 @@ Route::post('equipos/create', [EquiposController::class,'create'])->name('equipo
 
 Route::get('equipos/{equipo}/edit', [EquiposController::class,'edit'])->name('equipos.edit');
 
-Route::get('equipos/{equipo1}/delete', [EquiposController::class,'delete'])->name('equipos.delete');
+Route::put('equipos/{equipo}', [EquiposController::class,'update'])->name('equipos.update');
+
+Route::get('equipos/{id}/delete', [EquiposController::class,'delete'])->name('equipos.delete');
 
 //PARTIDOS//
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
@@ -33,4 +35,6 @@ Route::post('partidos/create', [PartidosController::class,'create'])->name('part
 
 Route::get('partidos/{partido}/edit', [PartidosController::class,'edit'])->name('partidos.edit');
 
-Route::get('partidos/{partido}/delete', [PartidosController::class,'delete'])->name('partidos.delete');
+Route::put('partidos/{partido}', [PartidosController::class,'update'])->name('partidos.update');
+
+Route::get('partidos/{id}/delete', [PartidosController::class,'delete'])->name('partidos.delete');
