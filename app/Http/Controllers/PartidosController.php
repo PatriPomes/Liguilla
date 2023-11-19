@@ -14,6 +14,7 @@ class PartidosController extends Controller
     }
     public function create(Request $request){
         //metodo encargado de crear
+       
         $partido = new Partido;
         $partido->fecha_partido = $request->fecha_partido;
         $partido->hora_partido = $request->hora_partido;

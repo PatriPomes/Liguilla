@@ -51,11 +51,11 @@
           </label> 
 
           <label>Goles Local:
-            <input type='number' name='goles_local'>
+            <input type='number' name='goles_local' value='' min='0' placeholder='-'>
           </label>
 
           <label>Goles Visitante:
-            <input type='number' name='goles_visitante'>
+            <input type='number' name='goles_local' value='' min='0' placeholder='-'>
           </label>
        
            <label> Equipo visitante:
