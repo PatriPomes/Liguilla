@@ -18,19 +18,17 @@ return new class extends Migration
             $table->time('hora_partido')->nullable();
             
             $table->enum('campo', ['local','visitante','pendiente'])->default('pendiente');
-    
-            $table->integer('goles_local');
-            $table->integer('goles_visitante');
-    
-            $table->unsignedBigInteger('equipo_local_id')->nullable();
-            $table->unsignedBigInteger('equipo_visitante_id')->nullable();
+            $table->unsignedBigInteger('equipo_local_id');
+            $table->integer('goles_local')->nullable();
+            $table->integer('goles_visitante')->nullable();
+            $table->unsignedBigInteger('equipo_visitante_id');
 
             $table->timestamps();
 
             $table->foreign('equipo_local_id')->references('id')->on('equipos')
-            ->onDelete('set null');
+            ->onDelete('cascade');
             $table->foreign('equipo_visitante_id')->references('id')->on('equipos')
-            ->onDelete('set null');
+            ->onDelete('cascade');
             
         });
     }
