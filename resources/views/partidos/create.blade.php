@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Que deseas modificar???</h2>
+    <h2>Jugamos??? En este espacio puedes crear los partidos necesarios para la liguilla!!!</h2>
     <!--INICIO CREAR-->
        
     <form action="{{route('partidos.store')}}" method="POST">
@@ -17,10 +17,20 @@
         <label> Fecha_partido:
             <input type='date' name='fecha_partido'>
          </label>
+         @error('fecha_partido')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+          @enderror
          <br>
          <label> Hora_partido:
             <input type='time' name='hora_partido'>
           </label>
+          @error('hora_partido')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+          @enderror
           <br>
           <label> Campo:
             <select name='campo'>
@@ -54,7 +64,9 @@
             </select>
           </label>
           @error('equipo_visitante_id')
-          {{$message}}
+            <br>
+            <span>*{{$message}}</span>
+            <br>
           @enderror
         <br>
         <button type="submit"> Añadir Partido </button>
