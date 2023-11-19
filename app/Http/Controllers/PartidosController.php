@@ -44,7 +44,7 @@ class PartidosController extends Controller
         
     }
     public function update(Request $request, Partido $partido){
-        $request->validate([
+       $request->validate([
             'fecha_partido'=>'required',
             'hora_partido'=>'required',
             'equipo_local_id' => 'required|exists:equipos,id',

@@ -57,7 +57,7 @@
           </label>
           <br>
            <label> Equipo visitante:
-            <select name='equipo_visitante_id'>
+            <select name='equipo_visitante'>
               @foreach ($equipos as $equipo)
               <option value='{{ $equipo->id }}' >{{ $equipo->name }}</option>
               @endforeach
