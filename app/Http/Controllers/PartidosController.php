@@ -64,8 +64,10 @@ class PartidosController extends Controller
        
         return redirect()->route('partidos.index');
     }
-    public function delete($partido){
+    public function destroy(Partido $partido){
         //metodo encargado de eliminar
+        $partido->delete();
+        
         return view('partidos');
     }
 
