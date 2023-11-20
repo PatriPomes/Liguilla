@@ -7,7 +7,6 @@
 </head>
 <body>
     <h2>Jugamos??? En este espacio puedes crear los partidos necesarios para la liguilla!!!</h2>
-    <!--INICIO CREAR-->
        
     <form action="{{route('partidos.store')}}" method="POST">
         @csrf
@@ -15,7 +14,7 @@
         $equipos = App\Models\Equipo::all();
         @endphp
         <label> Fecha_partido:
-            <input type='date' name='fecha_partido'>
+            <input type='date' name='fecha_partido' value='{{ old('fecha_partido', $partido->fecha_partido ?? '') }}'>
          </label>
          @error('fecha_partido')
             <br>
@@ -24,7 +23,7 @@
           @enderror
          <br>
          <label> Hora_partido:
-            <input type='time' name='hora_partido'>
+            <input type='time' name='hora_partido' value='{{ old('hora_partido', $partido->hora_partido ?? '') }}'>
           </label>
           @error('hora_partido')
             <br>
@@ -57,9 +56,9 @@
           </label>
           <br>
            <label> Equipo visitante:
-            <select name='equipo_visitante'>
+            <select name='equipo_visitante_id'>
               @foreach ($equipos as $equipo)
-              <option value='{{ $equipo->id }}' >{{ $equipo->name }}</option>
+              <option value='{{ $equipo->id }}'>{{ $equipo->name }}</option>
               @endforeach
             </select>
           </label>
@@ -70,7 +69,8 @@
           @enderror
         <br>
         <button type="submit"> Añadir Partido </button>
-       
+        <br>
+        <a href="{{route('partidos.index')}}"> Volver a Partidos</a>
     </form>
        
 

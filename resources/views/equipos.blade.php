@@ -7,7 +7,6 @@
 </head>
 <body>
     <h2>Pagina principal de los equipos participantes, aqui podras ver el listado de todos nuestros equipos</h2>
-    <!--INICIO CREAR-->
        
         <form action="{{ route('equipos.create') }}" method="POST">
             @csrf
@@ -34,8 +33,6 @@
             <button type="submit"> Añadir Equipo </button>
         </form>
         
-        <!--FIN CREAR-->
-        <!--INICIO MOSTRAR-->
     <ul>   
         <h5>EQUIPO      CAMPO</h5>
         @php
@@ -52,7 +49,9 @@
         </li>
         @endforeach
     </ul> 
-    <!--FIN -->
+    <br>
+    <a href="{{route('partidos.index')}}"> Ver Partidos</a>
+   
 
 </body>
 </html>

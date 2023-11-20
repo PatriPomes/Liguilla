@@ -32,7 +32,7 @@
             <br>
             <button type="submit"> Actualizar Equipo </button>
         </form>
-       
+        <a href="{{route('equipos.index')}}"> Volver a Equipos</a>
 
 </body>
 </html>

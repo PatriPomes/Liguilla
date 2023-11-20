@@ -2,28 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StorePartido;
+use App\Http\Requests\UpdatePartido;
 use App\Models\Partido;
-use App\Models\Equipo;
+
 class PartidosController extends Controller
 {
     public function index(){
-        //metodo encargado de mostrar la vista principal
+        
         $partidos= Partido::paginate(5);
+
         return view('partidos', compact('partidos'));
     }
     public function create(){
  
     return view ('partidos.create');   
     }
-    public function store(Request $request){
-        $request->validate([
-            'fecha_partido'=>'required',
-            'hora_partido'=>'required',
-            'equipo_local_id' => 'required|exists:equipos,id',
-            'equipo_visitante_id' => 'required|exists:equipos,id|different:equipo_local_id',
-        ]);
-
+    public function store(StorePartido $request){
+       
         $partido = new Partido;
         $partido->fecha_partido = $request->fecha_partido;
         $partido->hora_partido = $request->hora_partido;
@@ -33,7 +29,6 @@ class PartidosController extends Controller
         $partido->goles_visitante = $request->goles_visitante;
         $partido->equipo_visitante_id = $request->equipo_visitante_id;
        
-        
         $partido->save();
        
         return redirect()->route('partidos.index');
@@ -43,14 +38,8 @@ class PartidosController extends Controller
         return view('partidos.edit', compact('partido'));
         
     }
-    public function update(Request $request, Partido $partido){
-       $request->validate([
-            'fecha_partido'=>'required',
-            'hora_partido'=>'required',
-            'equipo_local_id' => 'required|exists:equipos,id',
-            'equipo_visitante_id' => 'required|exists:equipos,id|different:equipo_local_id',
-        ]);
-        
+    public function update(UpdatePartido $request, Partido $partido){
+               
         $partido->fecha_partido = $request->fecha_partido;
         $partido->hora_partido = $request->hora_partido;
         $partido->campo = $request->campo;
@@ -59,16 +48,15 @@ class PartidosController extends Controller
         $partido->goles_visitante = $request->goles_visitante;
         $partido->equipo_visitante_id = $request->equipo_visitante_id;
        
-        
         $partido->save();
        
         return redirect()->route('partidos.index');
     }
     public function destroy(Partido $partido){
-        //metodo encargado de eliminar
+        
         $partido->delete();
         
-        return view('partidos');
+        return redirect()->route('partidos.index');
     }
 
 }

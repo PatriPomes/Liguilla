@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Que deseas modificar???</h2>
-    <!--INICIO CREAR-->
+    
        
         <form action="{{route('partidos.update', $partido)}}" method="post">
             @csrf
@@ -63,7 +63,7 @@
             <br>
             <button type="submit"> Actualizar Partido </button>
         </form>
-       
+        <a href="{{route('partidos.index')}}"> Volver a Partidos</a>
 
 </body>
 </html>
