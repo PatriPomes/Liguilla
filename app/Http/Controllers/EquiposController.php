@@ -16,6 +16,11 @@ class EquiposController extends Controller
     }
     public function create(Request $request){
         //metodo encargado de crear
+        $request->validate([
+            'name'=>'required',
+            'campo'=>'required',
+        ]);
+
         $equipo = new Equipo;
         $equipo->name = $request->name;
         $equipo->campo = $request->campo;

@@ -15,12 +15,25 @@
                 Equipo:
                 <input type='text' name='name'>
             </label>
+            @error('name')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+            @enderror
+            <br>
             <label>
                 Campo:
                 <input type='text' name='campo'>
             </label>
+            @error('campo')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+            @enderror
+            <br>
             <button type="submit"> Añadir Equipo </button>
         </form>
+        
         <!--FIN CREAR-->
         <!--INICIO MOSTRAR-->
     <ul>   
@@ -41,11 +54,5 @@
     </ul> 
     <!--FIN -->
 
-    <h3>De la misma manera podras acceder a todas las funciones para la gestion de los mismos</h3>
-        <ul>
-            <li>Añadir nuevos equipos</li>
-            <li>Editar la informacion existente</li>
-            <li>Eliminar equipos que ya no desean participar</li>
-        </ul>
 </body>
 </html>
