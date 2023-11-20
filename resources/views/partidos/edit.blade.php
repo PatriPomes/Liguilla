@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Que deseas modificar???</h2>
-    <!--INICIO CREAR-->
+    
        
         <form action="{{route('partidos.update', $partido)}}" method="post">
             @csrf

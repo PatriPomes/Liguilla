@@ -11,7 +11,7 @@ class Equipo extends Model
     use HasFactory;
 
     public function partido(){
-        return $this->belongsTo('App\Models\Partido');
+        return $this->hasMany('App\Models\Partido');
     }
     //INICIO MUTADORES Y ACCESORES//
     protected function name ():Attribute{

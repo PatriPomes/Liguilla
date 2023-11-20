@@ -18,7 +18,7 @@ class PartidosController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-            'fecha_partido'=>'required',
+            'fecha_partido'=>'required|after:today',
             'hora_partido'=>'required',
             'equipo_local_id' => 'required|exists:equipos,id',
             'equipo_visitante_id' => 'required|exists:equipos,id|different:equipo_local_id',
@@ -45,7 +45,7 @@ class PartidosController extends Controller
     }
     public function update(Request $request, Partido $partido){
        $request->validate([
-            'fecha_partido'=>'required',
+            'fecha_partido'=>'required|after:today',
             'hora_partido'=>'required',
             'equipo_local_id' => 'required|exists:equipos,id',
             'equipo_visitante_id' => 'required|exists:equipos,id|different:equipo_local_id',
