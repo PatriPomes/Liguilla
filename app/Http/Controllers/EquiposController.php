@@ -50,7 +50,7 @@ class EquiposController extends Controller
         //metodo encargado de eliminar
         $equipo->delete();
         
-        return view('equipos');
+        return redirect()->route('equipos.index');
     }
 
 }

@@ -29,6 +29,8 @@
         </ul>
             {{-- {{$partidos->links()}} --}}
         <a href="{{route('partidos.create')}}"> Nuevo Partido</a>
+        <br>
+        <a href="{{route('equipos.index')}}"> Ver Equipos</a>
         
   
 </body>

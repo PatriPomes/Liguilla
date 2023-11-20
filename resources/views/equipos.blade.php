@@ -52,6 +52,8 @@
         </li>
         @endforeach
     </ul> 
+    <br>
+    <a href="{{route('partidos.index')}}"> Ver Partidos</a>
     <!--FIN -->
 
 </body>
