@@ -16,7 +16,7 @@
             $partidos = App\Models\Partido::all();
         @endphp
             @foreach ($partidos as $partido)    
-            <li>{{$partido->fecha_partido}} {{$partido->hora_partido}} {{$partido->campo}} 
+            <li>{{ \Carbon\Carbon::parse($partido->fecha_partido)->format('d-m-y') }} {{ date('H:i', strtotime($partido->hora_partido)) }} {{$partido->campo}} 
                 {{$partido->equipo_local->name}} {{$partido->goles_local}} {{$partido->goles_visitante}} {{$partido->equipo_visitante->name}}
                 <a href="{{route('partidos.edit', ['partido' => $partido->id]) }}">Editar</a>
                 <form action='{{route('partidos.destroy', $partido)}}' method="POST">
