@@ -20,7 +20,7 @@ Route::get("/", HomeController::class);//Acceso pagina principal, pendiente hace
 //EQUIPOS//
 Route::get('equipos', [EquiposController::class, 'index'])->name('equipos.index');
 
-Route::get('equipos/create', [EquiposController::class,'create'])->name('equipos.create');
+Route::post('equipos/create', [EquiposController::class,'create'])->name('equipos.create');
 
 //Route::post('equipos', [EquiposController::class,'store'])->name('equipos.store');
 
@@ -28,7 +28,7 @@ Route::get('equipos/{equipo}/edit', [EquiposController::class,'edit'])->name('eq
 
 Route::put('equipos/{equipo}', [EquiposController::class,'update'])->name('equipos.update');
 
-Route::get('equipos/{id}/delete', [EquiposController::class,'delete'])->name('equipos.delete');
+Route::delete('equipos/{equipo}', [EquiposController::class,'destroy'])->name('equipos.destroy');
 
 //PARTIDOS//
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');

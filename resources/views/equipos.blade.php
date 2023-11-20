@@ -15,30 +15,44 @@
                 Equipo:
                 <input type='text' name='name'>
             </label>
+            @error('name')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+            @enderror
+            <br>
             <label>
                 Campo:
                 <input type='text' name='campo'>
             </label>
+            @error('campo')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+            @enderror
+            <br>
             <button type="submit"> Añadir Equipo </button>
         </form>
+        
         <!--FIN CREAR-->
         <!--INICIO MOSTRAR-->
     <ul>   
         <h5>EQUIPO      CAMPO</h5>
-        
+        @php
+            $equipos = App\Models\Equipo::all();
+        @endphp
         @foreach ($equipos as $equipo)    
         <li>{{$equipo->name}} {{$equipo->campo}} 
             <a href="{{route('equipos.edit', ['equipo' => $equipo->id]) }}">Editar</a>
+            <form action='{{route('equipos.destroy', $equipo)}}' method="POST">
+                @csrf
+                @method('delete')
+                <button type="submit"> Eliminar</button>
+              </form>
         </li>
         @endforeach
     </ul> 
     <!--FIN -->
 
-    <h3>De la misma manera podras acceder a todas las funciones para la gestion de los mismos</h3>
-        <ul>
-            <li>Añadir nuevos equipos</li>
-            <li>Editar la informacion existente</li>
-            <li>Eliminar equipos que ya no desean participar</li>
-        </ul>
 </body>
 </html>

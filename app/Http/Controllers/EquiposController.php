@@ -16,6 +16,11 @@ class EquiposController extends Controller
     }
     public function create(Request $request){
         //metodo encargado de crear
+        $request->validate([
+            'name' => 'required|unique:equipos',
+            'campo' => 'required',
+           ]);
+
         $equipo = new Equipo;
         $equipo->name = $request->name;
         $equipo->campo = $request->campo;
@@ -30,15 +35,21 @@ class EquiposController extends Controller
         
     }
     public function update(Request $request, Equipo $equipo){
+        $request->validate([
+            'name' => 'required|unique:equipos',
+            'campo' => 'required',
+           ]);
+
         $equipo->name = $request->name;
         $equipo->campo = $request->campo;
         $equipo->save();
 
         return redirect()->route('equipos.index');
     }
-    public function delete($equipo){
+    public function destroy(Equipo $equipo){
         //metodo encargado de eliminar
-
+        $equipo->delete();
+        
         return view('equipos');
     }
 

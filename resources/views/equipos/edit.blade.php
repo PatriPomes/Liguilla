@@ -15,10 +15,20 @@
                 Equipo:
                 <input type='text' name='name' value='{{$equipo->name}}'>
             </label>
+            @error('name')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+            @enderror
             <label>
                 Campo:
                 <input type='text' name='campo' value='{{$equipo->campo}}'>
             </label>
+            @error('campo')
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+            @enderror
             <br>
             <button type="submit"> Actualizar Equipo </button>
         </form>
