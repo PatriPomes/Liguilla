@@ -13,7 +13,7 @@ class Equipo extends Model
     public function partido(){
         return $this->hasMany('App\Models\Partido');
     }
-    //INICIO MUTADORES Y ACCESORES//
+    
     protected function name ():Attribute{
         return new Attribute(
             get: fn($value) => ucwords($value),
@@ -26,5 +26,5 @@ class Equipo extends Model
             set: fn($value) => strtolower($value),
         );
     }
-    //FIN MUTADORES Y ACCESORES//
+    
 }

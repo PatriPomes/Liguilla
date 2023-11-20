@@ -7,7 +7,6 @@
 </head>
 <body>
     <h2>Jugamos??? En este espacio puedes crear los partidos necesarios para la liguilla!!!</h2>
-    <!--INICIO CREAR-->
        
     <form action="{{route('partidos.store')}}" method="POST">
         @csrf
@@ -70,7 +69,8 @@
           @enderror
         <br>
         <button type="submit"> Añadir Partido </button>
-       
+        <br>
+        <a href="{{route('partidos.index')}}"> Volver a Partidos</a>
     </form>
        
 

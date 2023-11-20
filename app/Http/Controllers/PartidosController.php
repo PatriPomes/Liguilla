@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePartido;
 use App\Http\Requests\UpdatePartido;
-use Illuminate\Http\Request;
 use App\Models\Partido;
 
 class PartidosController extends Controller

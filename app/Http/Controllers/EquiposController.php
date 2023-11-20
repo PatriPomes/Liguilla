@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateEquipo;
 use App\Http\Requests\UpdateEquipo;
-use Illuminate\Http\Request;
 use App\Models\Equipo;
 
 
@@ -13,7 +12,7 @@ class EquiposController extends Controller
     public function index(){
         
         $equipos= Equipo::all();
-        
+
         return view('equipos', compact('equipos'));
     }
     public function create(CreateEquipo $request){
