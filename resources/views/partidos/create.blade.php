@@ -15,7 +15,7 @@
         $equipos = App\Models\Equipo::all();
         @endphp
         <label> Fecha_partido:
-            <input type='date' name='fecha_partido'>
+            <input type='date' name='fecha_partido' value='{{ old('fecha_partido', $partido->fecha_partido ?? '') }}'>
          </label>
          @error('fecha_partido')
             <br>
@@ -24,7 +24,7 @@
           @enderror
          <br>
          <label> Hora_partido:
-            <input type='time' name='hora_partido'>
+            <input type='time' name='hora_partido' value='{{ old('hora_partido', $partido->hora_partido ?? '') }}'>
           </label>
           @error('hora_partido')
             <br>
