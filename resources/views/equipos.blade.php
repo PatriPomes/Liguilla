@@ -25,10 +25,17 @@
         <!--INICIO MOSTRAR-->
     <ul>   
         <h5>EQUIPO      CAMPO</h5>
-        
+        @php
+            $equipos = App\Models\Equipo::all();
+        @endphp
         @foreach ($equipos as $equipo)    
         <li>{{$equipo->name}} {{$equipo->campo}} 
             <a href="{{route('equipos.edit', ['equipo' => $equipo->id]) }}">Editar</a>
+            <form action='{{route('equipos.destroy', $equipo)}}' method="POST">
+                @csrf
+                @method('delete')
+                <button type="submit"> Eliminar</button>
+              </form>
         </li>
         @endforeach
     </ul> 

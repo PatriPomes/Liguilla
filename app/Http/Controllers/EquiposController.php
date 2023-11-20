@@ -36,9 +36,10 @@ class EquiposController extends Controller
 
         return redirect()->route('equipos.index');
     }
-    public function delete($equipo){
+    public function destroy(Equipo $equipo){
         //metodo encargado de eliminar
-
+        $equipo->delete();
+        
         return view('equipos');
     }
 
