@@ -2,8 +2,6 @@
 
 @section('title', 'Creando Partidos')
 
-@extends('layouts.plantilla')
-
 @section('content')
 
 <div class="mx-auto max-w-4xl p-4">
